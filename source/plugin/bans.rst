@@ -62,7 +62,7 @@ on ``Ban``. Using our builder, we can specify things such as the type of the ban
     Ban ban = Ban.builder().type(BanTypes.PROFILE).profile(user.getProfile())
         .reason(Text.of("The Sponge Council has Spoken!")).build();
 
-Alternatively, you can specify an ip ban on a online player:
+Alternatively, you can specify an ip ban on an online player:
 
 .. code-block:: java
     
@@ -79,6 +79,12 @@ Adding a Ban
 Now that we have created our ban, we can now register it to be used in Sponge. Using our ``BanService`` from before, we
 can use the ``addBan(Ban ban)`` method to accomplish this. Note that adding a ban will remove any previously existing
 ban.
+
+Pardoning
+~~~~~~~~~
+
+Now let's say we wanted to remove a ban from a user. We can use the ``pardon(GameProfile)`` method from our
+``BanService``. This method returns a boolean, which specifies if the user had a ban in place previously.
 
 Putting it All Together
 ~~~~~~~~~~~~~~~~~~~~~~~
